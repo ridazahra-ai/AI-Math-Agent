@@ -1,18 +1,33 @@
 import streamlit as st
-import os
 from agent import chat
 
 st.set_page_config(page_title = "AI Math Agrent", page_icon = "🧮", layout = "centered")
 st.title("🧮 AI Math Agent")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY") or st.secrets["GOOGLE_API_KEY"]
 
-print("\nType exit or quit for exiting from this...")
-while True:
-    user_input = input("\nYou: ")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-    if user_input.lower() in ["exit", "quit"]:
-        break
+for message in st.session_state.messages:
+    st.chat_message(message["role"]).write(message["content"])
 
-    response = chat(user_input)
+user_input = st.chat_input("Ask me any math question...")
 
-    print(f"\nAI: {response}")
+if user_input:
+
+    st.session_state.messages.append(
+        {"role": "user", "content": user_input}
+    )
+
+    try:
+        with st.spinner("Thinking..."):
+            response = chat(user_input)
+
+        st.session_state.messages.append(
+            {"role": "assistant", "content": response}
+        )
+
+        st.chat_message("assistant").write(response)
+
+    except Exception as e:
+        st.error(f"Error: {e}")
+        
