@@ -1,11 +1,8 @@
-
 # AI Math Agent
 
 An AI-powered mathematical assistant built with LangChain and Google Gemini.
 
 ---
-
-
 
 ## Description
 
@@ -16,8 +13,6 @@ Instead of relying on the LLM's own calculations, the agent uses a custom calcul
 The project also implements a custom conversation memory system that allows the AI to remember previous messages during the conversation.
 
 ---
-
-
 
 ## Features
 
@@ -30,8 +25,6 @@ The project also implements a custom conversation memory system that allows the 
 * 🔐 Secure API key management using environment variables
 
 ---
-
-
 
 ## How It Works
 
@@ -63,8 +56,6 @@ Answer  Calculator Tool
 
 ---
 
-
-
 ## Project Structure
 
 ```
@@ -83,14 +74,12 @@ AI-Math-Agent/
 
 ---
 
-
-
 ## Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/AI-Math-Agent.git
+git clone https://github.com/ridazahra-ai/AI-Math-Agent.git
 ```
 
 ### Navigate to Project Folder
@@ -121,8 +110,6 @@ pip install -r requirements.txt
 
 ---
 
-
-
 ## Environment Setup
 
 Create a `.env` file in the project directory.
@@ -135,8 +122,6 @@ MODEL_NAME=gemini-2.5-flash
 ```
 
 ---
-
-
 
 ## Usage
 
@@ -168,8 +153,6 @@ AI: Your name is Rida.
 
 ---
 
-
-
 ## Technologies Used
 
 * Python
@@ -180,8 +163,6 @@ AI: Your name is Rida.
 * python-dotenv
 
 ---
-
-
 
 ## Concepts Implemented
 
@@ -195,8 +176,6 @@ AI: Your name is Rida.
 
 ---
 
-
-
 ## Future Improvements
 
 * Implement LangGraph agent workflow
@@ -208,8 +187,6 @@ AI: Your name is Rida.
 * Deploy as a cloud-based AI service
 
 ---
-
-
 
 ## License
 

@@ -1,6 +1,10 @@
+import streamlit as st
 from agent import chat
 
-print("Type exit or quit for exiting from this...")
+st.set_page_config(page_title = "AI Math Agrent", page_icon = "🧮", layout = "centered")
+st.title("🧮 AI Math Agent")
+
+print("\nType exit or quit for exiting from this...")
 while True:
     user_input = input("\nYou: ")
 
