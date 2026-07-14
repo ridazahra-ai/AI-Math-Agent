@@ -41,6 +41,14 @@ def chat(user_input: str):
         final_response = model.invoke(memory.get())
         memory.add(final_response)
 
-        return final_response.content
+        content = final_response.content
 
-    return response.content
+        if isinstance(content, list):
+
+            return "".join(
+                block["text"]
+                for block in content
+                if block.get("type") == "text"
+            )
+
+    return content
